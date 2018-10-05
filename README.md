@@ -105,3 +105,74 @@ s4=r'''hello,
 lisa！'''
 print(n,'\n',f,'\n',s1,'\n',s2,'\n',s3,'\n',s4,)
 
+
+ord（）获取字符的整数表示          chr（）把编码转换为对应的字符
+example：
+>>> ord('c')
+99
+>>> chr(100)
+'d'
+
+‘ABC’是字符串      b'ABC'（或b"ABC"）这只占用一个字节的     str与bytes互相变换
+example:
+>>> 'ABC'.encode('ascii')           #将ABC转换为ASCII编码
+b'ABC'
+>>> '中文'.encode('utf-8')            #将中文转换为utf-8编码
+b'\xe4\xb8\xad\xe6\x96\x87'
+
+
+将Bytes变成str需要用到decode（）         其中如果出现些许错误则不能正常编译，但可以使用errors=‘ignore’忽略错误字节
+example：
+ b'ABC'.decode('ascii')         
+'ABC'
+>>> b'\xe4\xb8\xad\xe6\x96\x87'.decode('utf-8')
+'中文'
+ b'\xe4\xb8\xad\xe6'.decode('utf-8',errors='ignore')
+'中'
+
+
+len（‘****’）可以计算str有多少个字符
+example：
+len('ANC')
+3
+len(b'\xe4\xb8\xad\xe6\x96\x87')
+6
+>>> len('中文'.encode('utf-8'))
+6
+总结，在编码过程中尽量使用utf-8进行编码，或者使用统一的字符。       开头一般使用：  # -*- coding: utf-8 -*-
+
+
+%是python中的格式化     %%表示一个%    %d整数（替换）      %f浮点数      %s字符串（替换），可以把任何数据类型转换为字符串     %s十六进制整数
+example：
+'age: %s. male: %s' % (24,True)     #   %s表示替换
+'age: 24. male: True'
+'growth rate: %d %%' %10        #可以用两个%%转义成%
+'growth rate: 10 %'
+
+little question:
+# -*- coding: utf-8 -*-
+s1 = 72
+s2 = 85
+r = (s2-s1)/s1*100
+print("growth rate:%s %%" % r)
+growth rate:18.055555555555554 % 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
