@@ -158,13 +158,61 @@ print("growth rate:%s %%" % r)
 growth rate:18.055555555555554 % 
 
 
+LIST        表示方法为T=['A','B','C']      len（T）#查询T中的元素个数      T[0]#list中的第一个元素        T[-1]#最后一个元素   
+T.append('****')#往T中追加元素***到末尾       T.insert(1,'***')#往T中索引号为1的位置插入元素***     
+T.pop()#删除末尾的元素         T.pop(i)#删除索引号为i位置的元素       T[i]='***'#将索引位置处的元素替换为***
+TUPLE       T=('A','B','C')     #TUPLE中的元素只可查询不可更改，十分稳定         定义一个元素的tuple则是T=(1,)#需要用，来消除数学歧义
+one little question:
+# -*- coding: utf-8 -*-
+L = [
+    ['Apple', 'Google', 'Microsoft'],
+    ['Java', 'Python', 'Ruby', 'PHP'],
+    ['Adam', 'Bart', 'Lisa']
+]
+answer:
+# 打印Apple:
+print(L[0][0])
+# 打印Python:
+print(L[1][1])
+# 打印Lisa:
+print(L[2][2])
 
 
 
+判断：
+question：
+小明身高1.75，体重80.5kg。请根据BMI公式（体重除以身高的平方）帮小明计算他的BMI指数，并根据BMI指数：
+低于18.5：过轻
+18.5-25：正常
+25-28：过重
+28-32：肥胖
+高于32：严重肥胖
+# -*- coding: utf-8 -*-
+height = 1.75
+weight = 80.5
+bmi = weight/(height*height)
+if bmi<18.5:
+      print('too light')
+elif  bmi<25:
+      print('pass')
+elif  bmi<32:
+      print('fat')  
+else:
+      print('too fat')
 
 
+for循环以及while循环：
+sum=0
+>>>for x in range(101):
+	sum=sum+x
+	print (sum)     #计算1-100相加
 
-
+sum=0
+>>> n=99
+>>> while n>0:
+	sum=sum+n
+	n=n-2
+	print(sum)      #计算100以内奇数相加
 
 
 
