@@ -1,21 +1,20 @@
 # hello-world
-begin PY learning
+							begin PY learning
 i've done nothing
 exit()----shot down the software
-print('******')----打印出文字，单双引号不能混用
-print（*，*）---中间加，会输出空格
-input（）---输入字符串    
+print('******')					#print,do not mix ' with "
+print（*，*）					#add ','and there will be a space
+input（）						#input str  
 name=input(‘please input ur name：’)    
 wyz
 print('hello',name)
 
 
-#字开头则表示注释
-Python大小写敏感，，，千万别写错
+Python is sensitive about CAPs 
 
 
-\是转义字符          \n代表换行    \t表示制表符     \\表示\         
-'I\'m \"OK\"!'======I'm "OK"!----这段话既包含‘’也包含“”
+\ means transference          \n means tab    \t means character table     \\ mean one '\'         
+'I\'m \"OK\"!'======I'm "OK"!		#combine both ‘’ and “”
 example:
 print('I\'m ok')
 I'm ok
@@ -24,14 +23,14 @@ print('I\'m learning\nPython')
 I'm learning 
 Python
 
-r''表示''内部的字符默认不转义   
+r'' 					# the thing inside '' will not be transfered   
 example：
 print(r'\\\t\\')
 \\\t\\
 >>> print('\\\t\\')  
 \	\
 
-换行结构：
+							tab structure
 print('''line1
 line2
 line3''')
@@ -40,14 +39,16 @@ line2
 line3
 
 
-布尔值    只有true 或者false    可以用and（与） or（或） not（非）运算
+							boolean  
+							
+only true or false  			  and（与） or（或） not（非）
 example：
 3>2
 True
 2>3
 False
 
-and   所有运算都是true输出才是true
+and  					# all the operations are true the output is true
 >>> True and True
 True
 >>> True and False
@@ -58,7 +59,7 @@ False
 True
 
 
-or    只要有一个true输出就是true
+or  					# as long as one true appeared the out put is true 
 >>> True or True
 True
 >>> True or False
@@ -69,7 +70,7 @@ False
 True
 
 
-not   可以把true变成false ，false变成true
+not   					# turn true into false and false into true
 >>> not True
 False
 >>> not False
@@ -78,15 +79,15 @@ True
 True
 
 
-    a=1---a是整数型变量          a='1'---a是字符串
+    a=1		# a is a int          a='1'		# a is a str
 example:
-a = 123 # a是整数型变量
+a = 123			 # a is a int  
 print(a)
-a = 'ABC' # a变为字符串
+a = 'ABC' 		# a is a str
 print(a)
 
 
-/计算结果为浮点数     //计算结果为整数     %计算结果为整除剩下的余数
+/ # output is a float     // # output is a int     % # output is a remainder
 example：
 >>> 10/3
 3.3333333333333335
@@ -106,22 +107,22 @@ lisa！'''
 print(n,'\n',f,'\n',s1,'\n',s2,'\n',s3,'\n',s4,)
 
 
-ord（）获取字符的整数表示          chr（）把编码转换为对应的字符
+ord（） # obtain the int of character        chr（） # change code into character
 example：
 >>> ord('c')
 99
 >>> chr(100)
 'd'
 
-‘ABC’是字符串      b'ABC'（或b"ABC"）这只占用一个字节的     str与bytes互相变换
+‘ABC’ is a str      b'ABC'（ or b"ABC"）only takes one byte   str and bytes change
 example:
->>> 'ABC'.encode('ascii')           #将ABC转换为ASCII编码
+>>> 'ABC'.encode('ascii')           # turn ABC into ASCII code
 b'ABC'
->>> '中文'.encode('utf-8')            #将中文转换为utf-8编码
+>>> '中文'.encode('utf-8')            # turn chinese into utf-8 code
 b'\xe4\xb8\xad\xe6\x96\x87'
 
 
-将Bytes变成str需要用到decode（）         其中如果出现些许错误则不能正常编译，但可以使用errors=‘ignore’忽略错误字节
+decode（） 			# turn bytes into str ."error='ignore'" can be used to some mistakes that can't be translated    
 example：
  b'ABC'.decode('ascii')         
 'ABC'
@@ -131,7 +132,7 @@ example：
 '中'
 
 
-len（‘****’）可以计算str有多少个字符
+len（‘****’）		 # get the byte of str
 example：
 len('ANC')
 3
@@ -139,14 +140,19 @@ len(b'\xe4\xb8\xad\xe6\x96\x87')
 6
 >>> len('中文'.encode('utf-8'))
 6
-总结，在编码过程中尽量使用utf-8进行编码，或者使用统一的字符。       开头一般使用：  # -*- coding: utf-8 -*-
+be advised. use the same code to code in one program. the first line is always：  # -*- coding: utf-8 -*-
 
 
-%是python中的格式化     %%表示一个%    %d整数（替换）      %f浮点数      %s字符串（替换），可以把任何数据类型转换为字符串     %s十六进制整数
+'%'	 # format
+'%%'	 # one '%'    
+'%d'	 # int replace      
+'%f'	 # float      
+'%s'	 # str replace any data type into str   
+'%s' 	 # hexadecimal int
 example：
-'age: %s. male: %s' % (24,True)     #   %s表示替换
+'age: %s. male: %s' % (24,True)     #   '%s' means replace
 'age: 24. male: True'
-'growth rate: %d %%' %10        #可以用两个%%转义成%
+'growth rate: %d %%' %10      	  # two '%%' is transfered into one '%'
 'growth rate: 10 %'
 
 little question:
@@ -158,10 +164,24 @@ print("growth rate:%s %%" % r)
 growth rate:18.055555555555554 % 
 
 
-LIST        表示方法为T=['A','B','C']      len（T）#查询T中的元素个数      T[0]#list中的第一个元素        T[-1]#最后一个元素   
-T.append('****')#往T中追加元素***到末尾       T.insert(1,'***')#往T中索引号为1的位置插入元素***     
-T.pop()#删除末尾的元素         T.pop(i)#删除索引号为i位置的元素       T[i]='***'#将索引位置处的元素替换为***
-TUPLE       T=('A','B','C')     #TUPLE中的元素只可查询不可更改，十分稳定         定义一个元素的tuple则是T=(1,)#需要用，来消除数学歧义
+							list
+							
+LIST     	 	 # can be expressed :T=['A','B','C']      
+len（T）			# query amount of element in T      
+T[0]		 	 # first element in list T       
+T[-1]			 # last element
+T.append('****') 	# add element into the end of T       
+T.insert(1,'***')	# add element into position 1 of T     
+T.pop()			# delete the end element          
+T.pop(i)		# delete the element in position i      
+T[i]='***'		# replace the element in position i
+
+
+
+								TUPLE      
+								
+T=('A','B','C')   		  # elements in TUPLE can only be queried and can't be changed,very stable！
+T=(1,)				# define one element TUPLE need to use ',' to eliminate mathematical ambiguity(数学歧义)
 one little question:
 # -*- coding: utf-8 -*-
 L = [
@@ -177,9 +197,9 @@ print(L[1][1])
 # 打印Lisa:
 print(L[2][2])
 
-
-
-判断：
+							
+								judge
+								
 question：
 小明身高1.75，体重80.5kg。请根据BMI公式（体重除以身高的平方）帮小明计算他的BMI指数，并根据BMI指数：
 低于18.5：过轻
@@ -199,54 +219,58 @@ elif  bmi<32:
       print('fat')  
 else:
       print('too fat')
+      
 
-
-for循环以及while循环：
+							loop
+							
+for and while loop：
 sum=0
 >>>for x in range(101):
 	sum=sum+x
-	print (sum)     #计算1-100相加
+	print (sum)   		  # sum from 1-100
 
 sum=0
 >>> n=99
 >>> while n>0:
 	sum=sum+n
 	n=n-2
-	print(sum)      #计算100以内奇数相加
+	print(sum)   		   # odd number sum from 1-100
 
-break在while循环中的使用
+'break' usd in while
 n = 1
 while n <= 100:
-    if n > 10: 	# 当n = 11时，条件满足，执行break语句
-        break 	# break语句会结束当前循环
+    if n > 10: 			# while n=11 the condition is satisfied to implement 'break' sentence
+        break 			# 'break' will end current loop
     print(n)
     n = n + 1
 print('END')
 
-continue在while循环中的使用
+'continue' use in while
 n = 0
 while n < 10:
     n = n + 1
-    if n % 2 == 0: # 如果n是偶数，执行continue语句
-        continue # continue语句会直接继续下一轮循环，后续的print()语句不会执行
+    if n % 2 == 0: 	# if n is even number, implement 'continue' sentence 
+        continue	# 'continue' sentence will continue next round loop and the following sentence 'print()' will be implemented
     print(n)
 
 
-dict
-D={'a':12,'b':13,'c':14,'d':15}		#设置dict'D',其中有元素a=12,b=13,c=14,d=15
-D['a']					#查找D中的a
+							
+						dict and set
+							
+D={'a':12,'b':13,'c':14,'d':15}		# set dict'D',element:a=12,b=13,c=14,d=15
+D['a']					# query a in D
 12
-D['e']=18				#将e=18放入D中，如果重复放入e则会将前面的值给覆盖掉
+D['e']=18				# put e=18 in D，the ahead 'e' will be covered if continue put 'e'
 
-'h' in D				#h不存在则会报错
-False
+'h' in D				# it will report error if 'h' not in D
 
 D.pop('a')
 12
 D
-｛'b':13,'c':14,'d':15,'e':18｝		#将a从D中删除
+｛'b':13,'c':14,'d':15,'e':18｝		# delete a from D
 
 get语句不太会用
+
 请务必注意，dict内部存放的顺序和key放入的顺序是没有关系的。
 
 和list比较，dict有以下几个特点：
@@ -262,24 +286,145 @@ get语句不太会用
 dict可以用在需要高速查找的很多地方，在Python代码中几乎无处不在，正确使用dict非常重要，需要牢记的第一条就是dict的key必须是不可变对象。这是因为dict根据key来计算value的存储位置，如果每次计算相同的key得出的结果不同，那dict内部就完全混乱了。这个通过key计算位置的算法称为哈希算法（Hash）。要保证hash的正确性，作为key的对象就不能变。在Python中，字符串、整数等都是不可变的，因此，可以放心地作为key。而list是可变的，就不能作为key：
 
 
-set和dict类似，也是一组key的集合，但不存储value。由于key不能重复，所以，在set中，没有重复的key。
-S=set（[1,2.3,2,2,2,3,3,4,5,5,6]）		#设置一个SET‘S’，其中含有1，2，3这三个元素，其中不显示顺序，重复元素会被直接过滤S
+set similar to  dict，a group of keys，not storage value。but there is not repeat key in set
+S=set（[1,2.3,2,2,2,3,3,4,5,5,6]）		#set a "SET‘S’"，contain element:1,2,3,no order,repeat element will be filtered 
 S
 {1,2,3,4,5,6}
 
 S.add(9)
 S
-{1,2,3,4,5,6,9}					#向S中插入元素9
+{1,2,3,4,5,6,9}					# add 9 into S 
 
 S.remove（2）
 S
-{1,3,4,5,6,9}					#将2从S中删除
+{1,3,4,5,6,9}					# delete 2 from S
 
-T=set（[1,2,3,8]）				#设置一个set‘T’
+T=set（[1,2,3,8]）				# set a "set‘T’"
 S&T						
-{1,3}						#类似数学中的求交集
+{1,3}						# intersection
 S|T
-{1,2,3,4,5,6,8,9}				#类似数学中的求合集
+{1,2,3,4,5,6,8,9}				# aggregation
+
+
+
+							function
+						
+abs（**)			# the absolute value of **
+a=abs			
+a(-1)
+1			# command a=abs
+
+max(1,2,*,*,*,*,)	# the max one betwween the elements
+hex(i)			# hexadecimal
+	
+define a function
+def my_abs(i):
+	if i >=0:
+		return i
+	else:
+		return -i
+
+	
+>>> print(my_abs(-100))		# define a abs
+
+def nop():
+	pass			# if not figure out what to put here can use a empty funcion here
+
+if age>=18:
+	pass			# this sentence will be passed
+	
+ if not isinstance(x, (int, float)):
+        raise TypeError('bad operand type')		# parameter check, only allow int and float
+
+
+def my_abs(i):
+	if not isinstance(i, (int, float)):
+       		raise TypeError('bad operand type')
+	if i >=0:
+		return i
+	else:
+		return -i			# parameter checked function
+
+def quadratic(a, b, c):
+	for i in[a,b,c]:
+		if not isinstance(i, (int, float)):
+			raise TypeError('bad operand type')
+	D=b*b-4*a*c
+	if a==0:
+		x=-c/b
+		return x
+	elif D<0:
+		print('no answer')
+	elif D>0:
+		x1=(-b+math.sqrt(b*b-4*a*c))/2*a
+		x2=(-b-math.sqrt(b*b-4*a*c))/2*a
+		return x1,x2
+	elif D==0:
+		x1=x2=-b/(2*a)
+		return x1,x2					# can't run
+	
+定义函数时，需要确定函数名和参数个数；
+
+如果有必要，可以先对参数的数据类型做检查；
+
+函数体内部可以用return随时返回函数结果；
+
+函数执行完毕也没有return语句时，自动return None。
+
+函数可以同时返回多个值，但其实就是一个tuple。
+
+
+def power(x):
+	return:x*x			# define x^2
+
+def power(x,n):
+	i=1
+	while n>0:
+	n=n-1
+	i=i*x
+	return i			# calculate x^n
+一是必选参数在前，默认参数在后，否则Python的解释器会报错（思考一下为什么默认参数不能放在必选参数前面）；
+
+二是如何设置默认参数。
+
+当函数有多个参数时，把变化大的参数放前面，变化小的参数放后面。变化小的参数就可以作为默认参数。默认参数必须指向不变对象！！！
+
+
+def calc(numbers):
+	sum=0
+	for n in numbers:
+		sum=sum=n*n
+	return sum				
+calc([1,2,3,])
+14
+calc((1,2,3))
+14					# it need to in put a list or tuple
+
+reprogram:
+def calc(*numbers):
+	sum=0
+	for n in numbers:
+		sum=sum=n*n
+	return sum
+calc(1,2)
+5					# add a '*',the numbers will make input as a tuple
+if a tuple is already ahead,then we can use following code:
+nums=[1,2,3]
+calc(*nums)
+14					# effective
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
