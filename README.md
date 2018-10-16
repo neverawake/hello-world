@@ -393,7 +393,7 @@ def power(x,n):
 def calc(numbers):
 	sum=0
 	for n in numbers:
-		sum=sum=n*n
+		sum=sum+n*n
 	return sum				
 calc([1,2,3,])
 14
@@ -404,22 +404,99 @@ reprogram:
 def calc(*numbers):
 	sum=0
 	for n in numbers:
-		sum=sum=n*n
+		sum=sum+n*n
 	return sum
 calc(1,2)
 5					# add a '*',the numbers will make input as a tuple
 if a tuple is already ahead,then we can use following code:
 nums=[1,2,3]
 calc(*nums)
-14					# effective
+14					# *num will change the elements in num as a changable parameter
+
+def x(*nums):
+	sum=1
+	for i in nums:
+		sum*=i
+	return sum			# a plus fun
+>>>x(1,2,3,4,5)
+120
+
+						variable parameter
+						
+						
+ person('w',24)
+name w age 24 other {}
+>>> def person(name,age,**kw):				# define a fun,'**kw' is a keyword parameter
+	print('name:',name,'age:',age,'other',kw)	# print it
+
+	
+>>> person('w',24)					# input the parameter
+name: w age: 24 other {}				# it will automatically print it
+>>> person('wyz',24,city='chongqing')
+name: wyz age: 24 other {'city': 'chongqing'}
+>>> person('wyz',24,gender='male',city='chongqing')	# u can put many parameters,varialbe parameter can expand the function
+name: wyz age: 24 other {'gender': 'male', 'city': 'chongqing'}
+
+
+extra={'city':'chongqing','job':'student'}
+>>> person('wyz',24,**extra)
+name: wyz age: 24 other {'city': 'chongqing', 'job': 'student'}		# make a dic and use '**extra' to input the value of the dic
 
 
 
+def f1(a,b,c=0,*args,**kw):				# define a f1,parameter behind '*' will be regard as keyword parameter
+	print('a=',a,'b=',b,'c=',c,'args=',args,'kw=',kw)	
+	
+>>> f1(1,2)				
+a= 1 b= 2 c= 0 args= () kw= {}
+
+>>> f1(1,2,c=3)
+a= 1 b= 2 c= 3 args= () kw= {}
+
+>>> f1(1,2,3,'a','b')
+a= 1 b= 2 c= 3 args= ('a', 'b') kw= {}
+
+>>> f1(1,2,3,'a','b',x=99)
+a= 1 b= 2 c= 3 args= ('a', 'b') kw= {'x': 99}
+	
+	
+	
+>>> def f2(a,b,c=0,*,d,**kw):				# 
+	print('a=',a,'b=',b,'c=',c,'d=',d,'kw=',kw)		
+	
+
+
+>>> f2(1,2,d=99,ext=None)
+a= 1 b= 2 c= 0 d= 99 kw= {'ext': None}
+
+*args是可变参数，args接收的是一个tuple；
+
+**kw是关键字参数，kw接收的是一个dict。
+
+以及调用函数时如何传入可变参数和关键字参数的语法：
+
+可变参数既可以直接传入：func(1, 2, 3)，又可以先组装list或tuple，再通过*args传入：func(*(1, 2, 3))；
+
+关键字参数既可以直接传入：func(a=1, b=2)，又可以先组装dict，再通过**kw传入：func(**{'a': 1, 'b': 2})。
+
+使用*args和**kw是Python的习惯写法，当然也可以用其他参数名，但最好使用习惯用法。
+
+命名的关键字参数是为了限制调用者可以传入的参数名，同时可以提供默认值。
+
+定义命名的关键字参数在没有可变参数的情况下不要忘了写分隔符*，否则定义的将是位置参数。
 
 
 
+						recursion
+					
 
-
+>>> def fact(n):
+	if n==1:
+		return 1
+	else:
+		return n*fact(n-1)		# a fun 'n!'
+>>> fact(5)
+120
 
 
 
